@@ -4,6 +4,7 @@ resource "aws_lb_target_group" "my_api" {
   protocol = "HTTP"
   vpc_id      = aws_vpc.prod_vpc.id
 }
+
 resource "aws_alb" "my_api" {
   name               = "my-api-lb"
   internal           = false
@@ -15,7 +16,6 @@ resource "aws_alb" "my_api" {
   security_groups = [
     aws_security_group.alb.id
   ]
-  depends_on = [aws_internet_gateway.igw]
 }
 resource "aws_alb_listener" "my_api_http" {
   load_balancer_arn = aws_alb.my_api.arn

@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
   is_ipv6_enabled     = true
   comment             = "cloudfront-ecs-demo-webapp"
   default_root_object = "index.html"
-  //web_acl_id = "aws_wafv2_web_acl.example.arn"//
+
 
 
   origin {
